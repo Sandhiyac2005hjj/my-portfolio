@@ -9,6 +9,8 @@ import { CONTACT } from '../data/content';
  * copy, with the real <h1>) and once lit (decorative). Both copies share the
  * exact same layout so the beam lines up pixel for pixel.
  */
+const base = import.meta.env.BASE_URL;
+
 function Composition({ lit }: { lit: boolean }) {
   const Name = lit ? 'p' : 'h1';
   return (
@@ -17,8 +19,8 @@ function Composition({ lit }: { lit: boolean }) {
         <div className="portrait-mask">
           <img
             className="hero-portrait"
-            src="/portrait-860.jpg"
-            srcSet="/portrait-860.jpg 860w, /portrait-1290.jpg 1290w"
+            src={`${base}portrait-860.jpg`}
+            srcSet={`${base}portrait-860.jpg 860w, ${base}portrait-1290.jpg 1290w`}
             sizes="(max-width: 800px) 80vw, 38vw"
             width={1290}
             height={1640}
